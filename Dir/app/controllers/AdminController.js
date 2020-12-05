@@ -1,10 +1,10 @@
-import mongoose from 'mongoose';
-import Funcionario from '../models/Admin';
+"use strict";Object.defineProperty(exports, "__esModule", {value: true}); function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }var _mongoose = require('mongoose'); var _mongoose2 = _interopRequireDefault(_mongoose);
+var _Admin = require('../models/Admin'); var _Admin2 = _interopRequireDefault(_Admin);
 
 class AdminController {
   // Lista Funcionario
   async show(req, res) {
-    const funcionario = await Funcionario.findById(req.params.id);
+    const funcionario = await _Admin2.default.findById(req.params.id);
     return res.status(200).json(funcionario);
   }
 
@@ -12,8 +12,8 @@ class AdminController {
 
   async store(req, res) {
     const { nome, cpf, email, senha, telefone } = req.body;
-    const funcionario = new Funcionario({
-      _id: new mongoose.Types.ObjectId(),
+    const funcionario = new (0, _Admin2.default)({
+      _id: new _mongoose2.default.Types.ObjectId(),
       nome,
       cpf,
       email,
@@ -27,7 +27,7 @@ class AdminController {
   // Atualizar Funcionario
 
   async update(req, res) {
-    const funcionario = await Funcionario.findById(req.params.id);
+    const funcionario = await _Admin2.default.findById(req.params.id);
     if (!funcionario) {
       return res.status(401).json({
         error: 'Funcionario não encontrado',
@@ -49,7 +49,7 @@ class AdminController {
   // Deletar Funcionario
 
   async delete(req, res) {
-    const funcionario = await Funcionario.findById(req.params.id);
+    const funcionario = await _Admin2.default.findById(req.params.id);
     if (!funcionario) {
       return res.status(401).json({
         error: 'Funcionario não encontrado',
@@ -62,4 +62,4 @@ class AdminController {
   }
 }
 
-export default new AdminController();
+exports. default = new AdminController();

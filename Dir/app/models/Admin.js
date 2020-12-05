@@ -1,7 +1,7 @@
-import { Schema, model } from 'mongoose';
+"use strict";Object.defineProperty(exports, "__esModule", {value: true});var _mongoose = require('mongoose');
 
-const AdminSchema = new Schema({
-  _id: Schema.Types.ObjectId,
+const AdminSchema = new (0, _mongoose.Schema)({
+  _id: _mongoose.Schema.Types.ObjectId,
   week: [{}],
   nome: {
     type: String,
@@ -28,4 +28,4 @@ const AdminSchema = new Schema({
   },
 });
 
-export default model('Admin', AdminSchema);
+exports. default = _mongoose.model.call(void 0, 'Admin', AdminSchema);
