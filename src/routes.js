@@ -1,5 +1,5 @@
-import { Router } from 'express';
-import AdminController from './app/controllers/AdminController';
+const { Router } = require('express');
+const AdminController = require('./app/controllers/AdminController');
 
 const routes = new Router();
 
@@ -9,4 +9,4 @@ routes.post('/funcionario', AdminController.store);
 routes.put('/funcionario/:id', AdminController.update);
 routes.delete('/funcionario/:id', AdminController.delete);
 
-export default routes;
+module.exports = routes;

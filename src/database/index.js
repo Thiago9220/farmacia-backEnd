@@ -1,5 +1,4 @@
-import mongoose from 'mongoose';
-
+const mongoose = require('mongoose');
 // const models = [User, File, Appointment];
 
 class Database {
@@ -20,4 +19,4 @@ class Database {
   }
 }
 
-export default new Database();
+module.exports = new Database();

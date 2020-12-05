@@ -1,4 +1,4 @@
-import { Schema, model } from 'mongoose';
+const { Schema, model } = require('mongoose');
 
 const AdminSchema = new Schema({
   _id: Schema.Types.ObjectId,
@@ -28,4 +28,4 @@ const AdminSchema = new Schema({
   },
 });
 
-export default model('Admin', AdminSchema);
+module.exports = model('Admin', AdminSchema);
