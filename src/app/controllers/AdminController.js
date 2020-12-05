@@ -1,5 +1,5 @@
-import mongoose from 'mongoose';
-import Funcionario from '../models/Admin';
+const mongoose = require('mongoose');
+const Funcionario = require('../models/Admin');
 
 class AdminController {
   // Lista Funcionario
@@ -62,4 +62,4 @@ class AdminController {
   }
 }
 
-export default new AdminController();
+module.exports = new AdminController();
