@@ -1,30 +1,23 @@
 const { Schema, model } = require('mongoose');
 
-const AdminSchema = new Schema({
+const ProdutoSchema = new Schema({
   _id: Schema.Types.ObjectId,
   nome: {
     type: String,
     required: true,
   },
-  cpf: {
-    type: String,
-    required: true,
-    unique: true,
-  },
-  email: {
-    type: String,
-    required: true,
-    unique: true,
-  },
-  senha: {
+  dataValidade: {
     type: String,
     required: true,
   },
-  telefone: {
+  preco: {
     type: String,
     required: true,
-    unique: true,
   },
+  categoria: {
+    type: String,
+    required: true,
+  }
 });
 
-module.exports = model('Admin', AdminSchema);
+module.exports = model('Produto', ProdutoSchema);

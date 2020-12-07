@@ -1,6 +1,6 @@
 const { Schema, model } = require('mongoose');
 
-const AdminSchema = new Schema({
+const ClienteSchema = new Schema({
   _id: Schema.Types.ObjectId,
   nome: {
     type: String,
@@ -11,20 +11,10 @@ const AdminSchema = new Schema({
     required: true,
     unique: true,
   },
-  email: {
-    type: String,
-    required: true,
-    unique: true,
-  },
-  senha: {
-    type: String,
-    required: true,
-  },
   telefone: {
     type: String,
     required: true,
-    unique: true,
   },
 });
 
-module.exports = model('Admin', AdminSchema);
+module.exports = model('Cliente', ClienteSchema);
