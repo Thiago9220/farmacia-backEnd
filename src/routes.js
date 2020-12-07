@@ -5,7 +5,9 @@ const ClienteController = require('./app/controllers/ClienteController')
 
 const routes = new Router();
 
-routes.get('/', console.log('Tudo OK!'))
+routes.get('/', function (req,res){
+  return res.send('Tudo OK!')
+})
 
 // CRUD Funcionario
 routes.get('/funcionario/:id', AdminController.show);
