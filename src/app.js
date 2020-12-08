@@ -10,32 +10,15 @@ class App {
 
     this.middlewares();
     this.routes();
-    this.cors()
   }
 
   middlewares() {
     this.server.use(express.json());
+    this.server.use('*', cors());
   }
 
   routes() {
     this.server.use(routes);
-  }
-
-  cors() {
-    this.server.use((req, res, next) => {
-
-      res.header("Access-Control-Allow-Origin", "*");
-      res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
-      res.header(
-        "Access-Control-Allow-Headers",
-        "Origin, X-Requested-With, Content-Type,  Accept,  Authorization"
-      );
-
-      this.server.use(cors());
-      this.server.options("*", cors());
-    
-      next();
-    });
   }
 }
 
