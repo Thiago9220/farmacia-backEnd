@@ -20,7 +20,6 @@ class AdminController {
   async store(req, res) {
     const { nome, cpf, email, senha, telefone } = req.body;
     const funcionario = new Funcionario({
-      _id: new mongoose.Types.ObjectId(),
       nome,
       cpf,
       email,
