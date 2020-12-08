@@ -3,7 +3,7 @@ const Produto = require('../models/Produto');
 
 class ProdutoController {
   // Lista Produto
-  async show(req, res, next) {
+  async show(req, res) {
     const produto = await Produto.findById(req.params.id);
 
     if(!produto) {
@@ -15,7 +15,7 @@ class ProdutoController {
 
   // Criar Produto
 
-  async store(req, res, next) {
+  async store(req, res) {
     const { nome, preco, categoria, dataValidade } = req.body;
     const produto = new Produto({
       _id: new mongoose.Types.ObjectId(),
@@ -27,7 +27,7 @@ class ProdutoController {
 
   // Atualizar Produto
 
-  async update(req, res, next) {
+  async update(req, res) {
     const produto = await Produto.findById(req.params.id);
 
     if (!produto) {
@@ -55,7 +55,7 @@ class ProdutoController {
 
   // Deletar Produto
 
-  async delete(req, res, next) {
+  async delete(req, res) {
     const produto = await Produto.findById(req.params.id);
     if (!produto) {
       return res.status(401).json({

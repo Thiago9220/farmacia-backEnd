@@ -3,7 +3,7 @@ const Funcionario = require('../models/Funcionario');
 
 class AdminController {
   // Lista Funcionario
-  async show(req, res, next) {
+  async show(req, res) {
     const funcionario = await Funcionario.findById(req.params.id);
 
     if(!funcionario) {
@@ -17,7 +17,7 @@ class AdminController {
 
   // Criar Funcionario
 
-  async store(req, res, next) {
+  async store(req, res) {
     const { nome, cpf, email, senha, telefone } = req.body;
     const funcionario = new Funcionario({
       nome,
@@ -32,7 +32,7 @@ class AdminController {
 
   // Atualizar Funcionario
 
-  async update(req, res, next) {
+  async update(req, res) {
     const funcionario = await Funcionario.findById(req.params.id);
     if (!funcionario) {
       return res.status(401).json({
@@ -54,7 +54,7 @@ class AdminController {
 
   // Deletar Funcionario
 
-  async delete(req, res, next) {
+  async delete(req, res) {
     const funcionario = await Funcionario.findById(req.params.id);
     if (!funcionario) {
       return res.status(401).json({

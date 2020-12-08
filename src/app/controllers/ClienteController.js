@@ -3,14 +3,14 @@ const Cliente = require('../models/Cliente');
 
 class ClienteController {
   // Lista Cliente
-  async show(req, res, next) {
+  async show(req, res) {
     const cliente = await Cliente.findById(req.params.id);
     return res.status(200).json(cliente);
   }
 
   // Criar Cliente
 
-  async store(req, res, next) {
+  async store(req, res) {
     const { nome, cpf, telefone } = req.body;
     const cliente = new Cliente({
       _id: new mongoose.Types.ObjectId(),
@@ -24,7 +24,7 @@ class ClienteController {
 
   // Atualizar Cliente
 
-  async update(req, res, next) {
+  async update(req, res) {
     const cliente = await Cliente.findById(req.params.id);
     if (!cliente) {
       return res.status(401).json({
@@ -44,7 +44,7 @@ class ClienteController {
 
   // Deletar Cliente
 
-  async delete(req, res, next) {
+  async delete(req, res) {
     const cliente = await Cliente.findById(req.params.id);
     if (!cliente) {
       return res.status(401).json({
