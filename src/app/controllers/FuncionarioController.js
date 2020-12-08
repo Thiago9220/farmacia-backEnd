@@ -4,7 +4,7 @@ const Funcionario = require('../models/Funcionario');
 class AdminController {
   // Lista Funcionario
   async show(req, res) {
-    const funcionario = await Funcionario.findOne(req.params.id);
+    const funcionario = await Funcionario.findById(req.params.id);
 
     if(!funcionario) {
       return res.status(401).json({
@@ -34,7 +34,7 @@ class AdminController {
   // Atualizar Funcionario
 
   async update(req, res) {
-    const funcionario = await Funcionario.findOne(req.params.id);
+    const funcionario = await Funcionario.findById(req.params.id);
     if (!funcionario) {
       return res.status(401).json({
         error: 'Funcionario não encontrado',
@@ -56,7 +56,7 @@ class AdminController {
   // Deletar Funcionario
 
   async delete(req, res) {
-    const funcionario = await Funcionario.findOne(req.params.id);
+    const funcionario = await Funcionario.findById(req.params.id);
     if (!funcionario) {
       return res.status(401).json({
         error: 'Funcionario não encontrado',
