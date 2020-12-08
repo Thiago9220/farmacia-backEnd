@@ -5,6 +5,13 @@ class AdminController {
   // Lista Funcionario
   async show(req, res) {
     const funcionario = await Funcionario.findById(req.params.id);
+
+    if(!funcionario) {
+      return res.status(401).json({
+        error: 'Funcionario não encontrado',
+      });
+    }
+
     return res.status(200).json(funcionario);
   }
 
