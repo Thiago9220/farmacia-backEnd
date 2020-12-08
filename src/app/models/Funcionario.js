@@ -1,7 +1,7 @@
 const { Schema, model } = require('mongoose');
 
 const FuncionarioSchema = new Schema({
-  id: new mongoose.Types.ObjectId(),
+  id: Schema.Types.ObjectId,
   nome: {
     type: String,
     required: true,
