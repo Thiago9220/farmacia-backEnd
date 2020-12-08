@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const Funcionario = require('../models/Admin');
+const Funcionario = require('../models/Funcionario');
 
 class AdminController {
   // Lista Funcionario
@@ -57,7 +57,6 @@ class AdminController {
 
   async delete(req, res) {
     const funcionario = await Funcionario.findOne(req.params.id);
-
     if (!funcionario) {
       return res.status(401).json({
         error: 'Funcionario não encontrado',
