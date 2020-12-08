@@ -1,5 +1,5 @@
 const { Router } = require('express');
-const AdminController = require('./app/controllers/AdminController');
+const FuncionarioController = require('./app/controllers/FuncionarioController');
 const ProdutoController =  require('./app/controllers/ProdutoController')
 const ClienteController = require('./app/controllers/ClienteController')
 
@@ -10,11 +10,11 @@ routes.get('/', function (req,res){
 })
 
 // CRUD Funcionario
-routes.get('/funcionario/:id', AdminController.show);
-routes.post('/funcionario', AdminController.store);
+routes.get('/funcionario/:id', FuncionarioController.show);
+routes.post('/funcionario', FuncionarioController.store);
 
-routes.put('/funcionario/:id', AdminController.update);
-routes.delete('/funcionario/:id', AdminController.delete);
+routes.put('/funcionario/:id', FuncionarioController.update);
+routes.delete('/funcionario/:id', FuncionarioController.delete);
 
 // CRUD Produto
 routes.get('/produto/:id', ProdutoController.show);

@@ -1,6 +1,6 @@
 const { Schema, model } = require('mongoose');
 
-const AdminSchema = new Schema({
+const FuncionarioSchema = new Schema({
   _id: Schema.Types.ObjectId,
   nome: {
     type: String,
@@ -27,4 +27,4 @@ const AdminSchema = new Schema({
   },
 });
 
-module.exports = model('Admin', AdminSchema);
+module.exports = model('Funcionario', FuncionarioSchema);
