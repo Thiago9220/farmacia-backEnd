@@ -11,25 +11,27 @@ routes.get('/', function (req, res){
 })
 
 // CRUD Funcionario
+routes.get('/funcionario', () => res.send('Tudo OK!'));
+
 routes.get('/funcionario/:id', cors(), FuncionarioController.show);
 routes.post('/funcionario', cors(), FuncionarioController.store);
-
 routes.put('/funcionario/:id', cors(), FuncionarioController.update);
 routes.delete('/funcionario/:id', cors(), FuncionarioController.delete);
 
 // CRUD Produto
+routes.get('/produto', () => res.send('Tudo OK!'));
+
 routes.get('/produto/:id', cors(), ProdutoController.show);
 routes.post('/produto', cors(), ProdutoController.store);
-
-routes.put('/produto/:id', cors(), ProdutoController.update);
+routes.put('/produto', cors(), ProdutoController.update);
 routes.delete('/produto/:id', cors(), ProdutoController.delete);
 
 // CRUD Cliente
-routes.get('/cliente/:id', cors(), ClienteController.show);
-routes.post('/cliente', cors(), ClienteController.store);
+routes.get('/cliente', () => res.send('Tudo OK!'));
 
+routes.get('/cliente/:id', cors(), ClienteController.show);
+routes.post('/cliente', cors(), ClienteController.store)
 routes.put('/cliente/:id', cors(), ClienteController.update);
 routes.delete('/cliente/:id', cors(), ClienteController.delete);
-
 
 module.exports = routes;
