@@ -6,7 +6,7 @@ const ClienteController = require('./app/controllers/ClienteController')
 
 const routes = new Router();
 
-routes.get('/', cors(), function (req, cors(),res){
+routes.get('/', cors(), function (req,res){
   return res.send('Tudo OK!')
 })
 
