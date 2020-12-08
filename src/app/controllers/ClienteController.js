@@ -8,6 +8,12 @@ class ClienteController {
     return res.status(200).json(cliente);
   }
 
+  // Lista Cliente
+  async index(req, res) {
+    const clientes = await Cliente.find();
+    return res.status(200).json(clientes);
+  }
+
   // Criar Cliente
 
   async store(req, res) {

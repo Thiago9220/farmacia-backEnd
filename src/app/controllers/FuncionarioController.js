@@ -15,6 +15,13 @@ class AdminController {
     return res.status(200).json(funcionario);
   }
 
+    // Lista Funcionarios
+    async index(req, res) {
+      const funcionarios = await Funcionario.find();
+
+      return res.status(200).json(funcionarios);
+    }
+
   // Criar Funcionario
 
   async store(req, res) {

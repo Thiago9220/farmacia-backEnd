@@ -13,6 +13,12 @@ class ProdutoController {
     return res.status(200).json(produto);
   }
 
+  // Lista Produto
+  async index(req, res) {
+    const produtos = await Produto.find();
+    return res.status(200).json(produtos);
+  }
+
   // Criar Produto
 
   async store(req, res) {
