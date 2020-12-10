@@ -9,16 +9,20 @@ class App {
     this.server = express();
 
     this.middlewares();
+    this.cors();
     this.routes();
   }
 
   middlewares() {
-    this.server.use('*', cors());
     this.server.use(express.json());
   }
 
   routes() {
     this.server.use(routes);
+  }
+  cors() {
+    this.server.use('*', cors());
+    
   }
 }
 
